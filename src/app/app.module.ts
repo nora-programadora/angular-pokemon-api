@@ -6,11 +6,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
+import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokedexComponent
+    PokedexComponent,
+    PokemonSearchComponent
   ],
   imports: [
     BrowserModule,
