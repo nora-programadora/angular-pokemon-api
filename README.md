@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.8.
 
+## Libraries used
+For the pagination function maybe needs install the ngx-pagination library with npm i ngx-pagination. 
+More documentation at https://www.npmjs.com/package/ngx-pagination
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
