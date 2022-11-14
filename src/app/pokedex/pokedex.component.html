@@ -1,27 +1,27 @@
 <div class="title">
-    <img src="../../assets/logo.png">
-  </div>
-  
-  <div class="main">
-  
-    <div class="pokes" *ngFor="let poke of pokemons">
-  
-      <a  [routerLink]="['/pokeDetails', poke.name]">
-  
-      <img [src]="poke.sprites.front_default" alt=""
-        (click)="showData(poke.name)
-        ">
-      </a>
-  
-      <h3 >{{poke.name | titlecase}}</h3>
-  
-      <div class="card-footer">
-        <span > {{poke.types[0].type.name | titlecase}}</span>
-        <span *ngIf="poke.types[1]"> {{poke.types[1].type.name | titlecase}}</span>
-      </div>
+  <img src="../../assets/logo.png">
+</div>
+
+<div class="main">
+
+  <div class="pokes" *ngFor="let poke of pokemons | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPokemons  }">
+
+    <a  [routerLink]="['/pokeDetails', poke.name]">
+
+    <img [src]="poke.sprites.front_default" alt=""
+      (click)="showData(poke.name)
+      ">
+    </a>
+
+    <h3 >{{poke.name | titlecase}}</h3>
+
+    <div class="card-footer">
+      <span > {{poke.types[0].type.name | titlecase}}</span>
+      <span *ngIf="poke.types[1]"> {{poke.types[1].type.name | titlecase}}</span>
     </div>
-  
   </div>
-  
-  
-  
+
+</div>
+
+<pagination-controls (pageChange)="page = $event;  pokemons= []; loadMore()"></pagination-controls>
+
