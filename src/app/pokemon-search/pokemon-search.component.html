@@ -3,24 +3,18 @@
  </div>
  
  <div class="input">
- 
-  
      <input
-     matInput
-     #id
+      #id
+      type="text"
+      name="pokeName"
+      (keyup.enter)="getPokemon(id.value)"
+      placeholder="Search by name or id">
  
-     type="text"
-     name="pokeName"
-     (keyup.enter)="getPokemon(id.value)"
-     placeholder="Search by name or id">
- 
-    <button
-     mat-raised-button
-     color="green"
-     (click)="getPokemon(id.value)"
-     name="butonPoke"
-     ngDefaultControl>
-     Search</button>
+      <button
+      (click)="getPokemon(id.value)"
+      name="butonPoke"
+      ngDefaultControl>
+      Search</button>
  </div>
  
  

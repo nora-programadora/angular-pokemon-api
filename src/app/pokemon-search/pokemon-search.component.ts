@@ -7,6 +7,7 @@ import { PokedexServiceService } from '../pokedex-service.service';
   styleUrls: ['./pokemon-search.component.sass']
 })
 export class PokemonSearchComponent implements OnInit {
+  
   @Output() pokemon: any;
 
     pokeName:string='';
@@ -27,7 +28,7 @@ export class PokemonSearchComponent implements OnInit {
       .subscribe(
         (response) => {
           this.pokemon=response;
-          // console.log(this.pokemon);
+          console.log(this.pokemon);
         }
       )
 
