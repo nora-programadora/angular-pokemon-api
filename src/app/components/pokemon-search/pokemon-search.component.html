@@ -1,0 +1,19 @@
+
+<div class="input">
+  <mat-form-field appearance="fill" class="custom-form-field">
+    <input matInput
+      #id
+      type="text"
+      name="pokeName"
+      (keyup.enter)="getPokemon(id.value)"
+      placeholder="Search by name or id">
+  </mat-form-field>
+
+  <button mat-button
+    (click)="getPokemon(id.value)"
+    name="butonPoke">
+    search
+  </button>
+</div>
+
+<app-poke-details *ngIf="pokemon" [pokemon]="pokemon"></app-poke-details>

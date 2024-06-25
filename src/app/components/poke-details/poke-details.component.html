@@ -1,0 +1,73 @@
+<!-- <div *ngIf="pokemon">
+    <h1>{{ pokemon.name | titlecase }}</h1>
+    <span>N°{{pokemon.id}}</span>
+    <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+
+    <p>Type:</p>
+    <ul>
+        <li *ngFor="let t of pokemon.types">
+            {{ t.type.name | titlecase }}
+        </li>
+    </ul>
+
+    <p>Abilities:</p>
+    <ul>
+        <li *ngFor="let ability of pokemon.abilities">
+            {{ ability.ability.name | titlecase }}
+        </li>
+    </ul>
+    <span> Base experience: <b > {{ pokemon.base_experience }} </b>  </span>
+
+    <p>height: {{pokemon.height}}</p>
+    <p>weight: {{pokemon.weight}}</p>
+
+     <h2>Stats:</h2>
+    <ul>
+        <li><b>HP:</b> {{ pokemon.stats[0].base_stat }}</li>
+        <li><b>Attack:</b> {{ pokemon.stats[1].base_stat }}</li>
+        <li><b>Defense:</b> {{ pokemon.stats[2].base_stat }}</li>
+        <li><b>Special Attack:</b> {{ pokemon.stats[3].base_stat }}</li>
+        <li><b>Special Defense:</b> {{ pokemon.stats[4].base_stat }}</li>
+        <li><b>Speed:</b> {{ pokemon.stats[5].base_stat }}</li>
+    </ul>
+</div> -->
+<div class="main-content">
+    <mat-card *ngIf="pokemon" class="pokemon-card">
+        <mat-card-header>
+            <div class="card-img">
+                <img mat-card-image [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+            </div>
+            <mat-card-title class="card-title">{{ pokemon.name | titlecase }}</mat-card-title>
+            <mat-card-subtitle>N°{{ pokemon.id }}</mat-card-subtitle>
+            
+            <p><b>Height</b> {{pokemon.height}}</p>
+            <p><b>Weight</b> {{pokemon.weight}}</p>
+            
+            <span> Base experience <b > {{ pokemon.base_experience }} </b>  </span>
+        </mat-card-header>
+
+        <mat-card-content>
+            <h3>Type(s)</h3>
+            <ul>
+                <li *ngFor="let t of pokemon.types">
+                    {{ t.type.name | titlecase }}
+                </li>
+            </ul>
+            <h3>Abilities</h3>
+            <ul>
+                <li *ngFor="let ability of pokemon.abilities">
+                    {{ ability.ability.name | titlecase }}
+                </li>
+            </ul>
+            <h3>Stats</h3>
+            <ul>
+                <li><b>HP</b> {{ pokemon.stats[0].base_stat }}</li>
+                <li><b>Attack</b> {{ pokemon.stats[1].base_stat }}</li>
+                <li><b>Defense</b> {{ pokemon.stats[2].base_stat }}</li>
+                <li><b>Special Attack</b> {{ pokemon.stats[3].base_stat }}</li>
+                <li><b>Special Defense</b> {{ pokemon.stats[4].base_stat }}</li>
+                <li><b>Speed</b> {{ pokemon.stats[5].base_stat }}</li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+</div>
